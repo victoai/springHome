@@ -9,7 +9,11 @@
 	<bean id="calculator" class="com.acron.di.ACalculator"/>	
 	<bean id="test" class="com.acron.di.Test"/>  
 	
-
+	 <!-- setter Injection  쎄터 주입  -->	  
+ 	<bean id="program"  class="com.acron.di.Program" >
+	    <property  name="calculator" ref="calculator"/>	  
+	</bean>
+	 
 	 
 	<!--  constructor Injection  생성자 주입  -->	
 	<bean id="program"  class="com.acron.di.Program" >

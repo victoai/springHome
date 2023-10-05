@@ -10,7 +10,11 @@ public class Program {
 		// TODO Auto-generated constructor stub
 	}
 	
- 
+	public Program(Calculator calculator) {
+		// TODO Auto-generated constructor stub
+		this.calculator =calculator;
+	}
+	
 	
 	//세터주입	
 	public void setCalculator(Calculator calculator) {

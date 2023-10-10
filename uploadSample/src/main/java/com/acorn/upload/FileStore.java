@@ -16,10 +16,14 @@ public class FileStore {
     
     private String fileDir="c:\\test\\upload\\";
 
+    
+    
+    //전체경로 얻어오기
     public String getFullPath(String filename) {
         return fileDir + filename;
     }
 
+    //List<MultipartFile>   ->  List<UploadFile> 
     public List<UploadFile> storeFiles(List<MultipartFile> multipartFiles) throws IOException {
         List<UploadFile> storeFileResult = new ArrayList<UploadFile>();
         for (MultipartFile multipartFile : multipartFiles) {
@@ -30,10 +34,7 @@ public class FileStore {
         return storeFileResult;
     }
 
-    public UploadFile storeFile(MultipartFile multipartFile) throws IOException {
-        if (multipartFile.isEmpty()) {
-            return null;
-        }
+    public UploadFile storeFile(MultipartFile multipartFile) throws IOException {      
 
         String originalFilename = multipartFile.getOriginalFilename();
         String storeFileName = createStoreFileName(originalFilename);

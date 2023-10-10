@@ -33,6 +33,7 @@ public class NaverApi3 {
         System.out.println( rjson);
         JSONArray items = rjson.getJSONArray("items");
 
+        
         List<ItemDto> itemDtoList = new ArrayList<ItemDto>();
         for(int i=0; i <items.length(); i++){
             JSONObject itemJson =  items.getJSONObject(i);

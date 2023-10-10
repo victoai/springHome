@@ -8,9 +8,7 @@ public class ItemForm {
 	
     private Long itemId;
     private String itemName; 
-    private List<MultipartFile> imageFiles;
-    
-    
+    private List<MultipartFile> imageFiles; 
     
 	public Long getItemId() {
 		return itemId;

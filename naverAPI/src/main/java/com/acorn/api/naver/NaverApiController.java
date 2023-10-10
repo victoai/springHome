@@ -15,11 +15,18 @@ public class NaverApiController {
 	
 	
 	@ResponseBody
-	@GetMapping(value="/apiNaver")
+	@GetMapping(value="/naverList")
 	public List<ItemDto> api( ){
 		String response = naverApi.getAPIString();
 		List<ItemDto> list = naverApi.fromJSONtoItems(response);
 		return list;		
 	}
 	
+	
+	@ResponseBody
+	@GetMapping(value="/naver"  , produces = "application/json;charset=utf-8")
+	public String  api0( ){
+		String response = naverApi.getAPIString();		 
+		return response;		
+	}
 }

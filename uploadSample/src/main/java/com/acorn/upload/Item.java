@@ -2,6 +2,8 @@ package com.acorn.upload;
 
 import java.util.List;
 
+
+//DTO
 public class Item {
 
     private Long id;

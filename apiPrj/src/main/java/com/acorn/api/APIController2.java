@@ -73,11 +73,28 @@ public class APIController2 {
 	
 	
 	@ResponseBody
+	@PostMapping("/member/register2")
+	public int method44(   User user )   {	
+		System.out.println( user);	
+		System.out.println( "등록합니다  rffff");		
+		return 1;
+	}	 
+	
+	@ResponseBody
 	@PutMapping("/member/modify/{id}")
 	public String method5( @RequestBody User user ,  @PathVariable String id ) {	
 		System.out.println( user);
 		System.out.println( id);
 		System.out.println( "고객 정보를 수정합니다");
+		return "1";
+	}
+	
+	@ResponseBody
+	@PutMapping("/member/modify2")
+	public String method55(  User user   ) {	
+		System.out.println( user);
+	 
+		System.out.println( "고객 정보를 수정합니다22222");
 		return "1";
 	}
 		
@@ -86,6 +103,14 @@ public class APIController2 {
 	@DeleteMapping("/member/delete/{id}")
 	public String method6(   @PathVariable String id ) {	
 		System.out.println( "고객 정보를 삭제합니다"); 
+		System.out.println( id);
+		return "1";
+	}
+	
+	@ResponseBody
+	@DeleteMapping("/member/delete2")
+	public String method7(  String id ) {	
+		System.out.println( "고객 정보를 삭제합니다222"); 
 		System.out.println( id);
 		return "1";
 	}

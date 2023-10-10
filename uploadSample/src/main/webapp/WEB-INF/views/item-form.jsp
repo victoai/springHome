@@ -15,7 +15,7 @@
         <h2>상품등록</h2>
     </div>
 
-    <form  action="<c:url value="/uploadMulti" />"  method="post" enctype="multipart/form-data">
+    <form  action="<c:url value="/uploadMulti" />"  method="post"  enctype="multipart/form-data">
         <ul>
         
             <li>상품코드 <input type="text" name="itemId"></li>        

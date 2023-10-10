@@ -12,7 +12,7 @@
 <div id="map" style="width:100%;height:350px;"></div>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2613f035dae7ee9dd2d398b49118edde"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dbf70297e98811f025c5189856048e47"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 

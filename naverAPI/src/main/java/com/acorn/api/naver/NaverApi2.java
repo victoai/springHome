@@ -35,8 +35,8 @@ public class NaverApi2 {
         }
         
         //요청 URL
-        String apiURL = "https://openapi.naver.com/v1/search/shop?query=" + text;    // JSON 결과
-        //String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text;  
+         String apiURL = "https://openapi.naver.com/v1/search/shop?query=" + text;    // JSON 결과
+        //  String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text;  
  
         HttpURLConnection  con; //  네이버서버에 api요청시 사용
         StringBuilder body ;    // 문자열연결시 사용

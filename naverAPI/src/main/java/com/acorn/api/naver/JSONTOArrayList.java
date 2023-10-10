@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class MethodTest2_method {
+public class JSONTOArrayList {
 
 	public static void main(String[] args) {
 		
@@ -28,7 +28,8 @@ public class MethodTest2_method {
 		
 		System.out.println( arr);		
 		// JSONArray  => ArrayList<UserDto>		
-		createArrayList(arr); 
+		ArrayList<UserDto> list = createArrayList(arr); 
+		System.out.println(  "결과" + list);
 	}
 
 	

@@ -30,26 +30,20 @@ public class FileItemController {
 	public String upload() {
 		return  "item-form"; 
 	}
-	
-	
+		
 
 	@PostMapping("/uploadMulti")
 	public String upload2(ItemForm form, Model model)  throws IOException   {
 		System.out.println( form );		
-	        List<UploadFile> storeImageFiles = store.storeFiles(form.getImageFiles());
-	        
-	        
+	        List<UploadFile> storeImageFiles = store.storeFiles(form.getImageFiles());	        
 		    Item item = new Item();
 		    item.setId( form.getItemId());
 	        item.setItemName(form.getItemName());	     
 	        item.setImageFiles(storeImageFiles);	       
 	        dao.save(item); 	        
 	        List<String> fileNames = getFileNames(storeImageFiles);	       
-	        model.addAttribute("fileNames" ,fileNames);  
-	        
-		return  "upload-ok";
-				
-		
+	        model.addAttribute("fileNames" ,fileNames); 	        
+		return  "upload-ok";				
 	}
 
 
@@ -63,12 +57,13 @@ public class FileItemController {
 	}
 	
 	
+	
 	@ResponseBody	
 	@RequestMapping( value="/images/{fileName:.*}" , method=RequestMethod.GET)
-	public Resource imageDownload(@PathVariable String  fileName) throws MalformedURLException {
-		
+	public Resource imageDownload(@PathVariable String  fileName) throws MalformedURLException {		
 		System.out.println( "fileName" + fileName);
 		return new  UrlResource("file:c:\\test\\upload\\"+ fileName);
 		
 	}
+	
 }

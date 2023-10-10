@@ -24,8 +24,8 @@ import org.springframework.stereotype.Component;
 public class NaverApi {
  
     public static void main(String[] args) {
-       String clientId = "QaMZOIzquZ2XCHAFDEMN"; //애플리케이션 클라이언트 아이디
-       String clientSecret = "GhQcIoHq8g"; //애플리케이션 클라이언트 시크릿
+       String clientId = "OTrolXUt5Lt1EIWU4I02"; //애플리케이션 클라이언트 아이디
+       String clientSecret = "HnRg9D3ObP"; //애플리케이션 클라이언트 시크릿
  
        
           String text = null;

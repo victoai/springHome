@@ -13,7 +13,7 @@ public class ItemRepository {
 
     public Item save(Item item) {
         item.setId(++sequence);
-        store.put(item.getId(), item);
+        store.put(item.getId(), item);         
         return item;
     }
 

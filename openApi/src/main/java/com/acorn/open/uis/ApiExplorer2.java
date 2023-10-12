@@ -61,10 +61,13 @@ public class ApiExplorer2 {
     	
     	for(int i=0; i <items.length(); i++) {
     		JSONObject itemJson= items.getJSONObject(i);
-    		System.out.println("informGrade:"+itemJson.getString("informGrade"));
-    		System.out.println("informCause.:"+itemJson.getString("informCause"));
-    		System.out.println("dataTime.:"+itemJson.getString("dataTime"));
-    		datas.add(new DataDto(itemJson.getString("informGrade"), itemJson.getString("informCause"), itemJson.getString("dataTime")));
+    		
+    	   System.out.println("oo"+ itemJson.get("imageUrl1"));  
+    	  
+    		System.out.println("informGrade:"+itemJson.get("informGrade"));
+    		System.out.println("informCause.:"+itemJson.get("informCause"));
+    		System.out.println("dataTime.:"+itemJson.get("dataTime"));
+    		datas.add(new DataDto(itemJson.get("imageUrl1") , itemJson.get("informGrade"), itemJson.getString("informCause"), itemJson.getString("dataTime")));
     	}
     	
 		return datas;

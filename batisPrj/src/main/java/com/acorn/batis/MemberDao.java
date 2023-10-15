@@ -35,6 +35,7 @@ public class MemberDao  {
     } // int delete(String statement)
 
     
+    
     public int delete( String id) throws Exception {          
         return   session.delete(namespace+"delete", id);
     } // int delete(String statement, Object parameter)

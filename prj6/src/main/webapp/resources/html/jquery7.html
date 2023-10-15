@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery</title>
+    <style>
+      #a {
+        width: 10%;
+        height: 100px;
+        background-color: #bbdefb;
+      }
+    </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $( document ).ready( function() {
+        $( 'button' ).click( function() {
+          $( '#a' ).animate( {
+            width: '100%'
+          }, 1000, function() {
+            $( this ).animate( {
+              width: '0%'
+            }, 1000 );
+          } );
+        } );
+      } );
+    </script>
+  </head>
+  <body>
+  
+  
+  
+  <!--  $(선택자).animate(스타일 [,지속시간] [,시간당속도함수] [,콜백 함수]); -->  
+  
+    <p><button>Click!</button></p>
+    <div id="a"></div>
+  </body>
+</html>

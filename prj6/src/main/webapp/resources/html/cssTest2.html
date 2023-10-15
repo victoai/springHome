@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<style>
+html, body {
+  height:100%
+}
+.outerDiv {
+  background-color:darkseagreen;
+  width:250px;
+  height:250px;
+  position:relative;     
+}
+
+.innerDiv {
+  background-color:teal;
+  width:100px;
+  height:100px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  /*
+   transform: css에서 transform속성을 사용하여 html요소의 모양, 크기, 위치등을 자유롭게 바꿀 수 있다.
+   translate()매서드 : 현재위치에서 해당요소를 x축과 y축으 거리만큼 이동시킨다.
+   */
+  transform:translate(-50%, -50%);
+}
+
+</style>
+</head>
+<body> 
+    <div class="outerDiv">
+      <div class="innerDiv"></div>
+    </div>  
+</body>
+</html>

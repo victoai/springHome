@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function getHTML() {
+	const element = document.getElementById('my_div'); 
+	alert(element.innerHTML);
+} 
+function getTEXT() { 
+	const element = document.getElementById('my_div');
+	alert(element.innerText);
+} 
+function getCONTENT() {
+	const element = document.getElementById('my_div');
+	alert(element.textContent);
+} 
+</script>
+</head>
+<body>
+
+
+<div id='my_div'>
+ hello div~~~
+ <span style='display:none'>사용자에게 보이지 않아요</span>
+</div>
+
+<input type='button' value='innerHTML' onclick='getHTML();'/> 
+<input type='button' value='innerText' onclick='getTEXT();'/>
+<input type='button' value='textContent' onclick='getCONTENT();'/> 
+</body>
+</html>

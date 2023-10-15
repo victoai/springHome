@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+ window.addEventListener("load" , init);  
+ 
+ 
+ function init(){ 
+	 let btn = document.getElementById("btn");
+	 btn.addEventListener("click" , function(){ alert("나 클릭1") ;});	 
+ 	 btn.addEventListener("click" , function(){ alert("나 클릭2") ;}); 
+ }
+ 
+ </script>
+</head>
+<body>
+<button id="btn">버튼</button>
+</body>
+</html>

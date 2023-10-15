@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+   
+   //문서로드완료된 후 
+ $(document).ready(
+		 function (){    	 
+			 alert("로드완료");
+			 let contents  = $("#wrap").text();  
+			 alert(contents);
+		} 
+ );
+ 
+    
+ 
+ function toggle(){
+	 $("#wrap").toggle();
+ }
+</script>
+</head>
+<body> 
+ <button  id="btn" > 토글</button> 
+ <div     id="wrap">   보이기 
+ </div>  
+ <button  id="btn2"  onclick="toggle()"> 토글</button> 
+
+</body>  
+</html>

@@ -9,8 +9,7 @@ import java.util.Objects;
  *  id varchar2(10) primary key,
  *  pwd varchar2(10) ,
  *  name varchar2(10) 
- * );
- * 
+ * ); 
  * 
  * 
  */

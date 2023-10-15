@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+ $(document).ready(  function(){	 
+	  alert("load완료");
+	  search();	  	  //	  
+	  //$("#show").on( "click" , function(){});
+	  //$("#show").click( function(){});;	 
+	  
+	   $("#show").on( "click" , ".btn" , function(){
+		          alert("삭제");   // ajax 
+		          let id = $(this).parent().attr("data-id");
+		          alert(id);	          
+		          
+	   });	  	  
+	
+ });  
+ function search(){
+	 alert("조회합니다");
+	 let users  = [ {id:"test01" ,pw:"0000"} ,{id:"test02" ,pw:"0000"} ,{id:"test03" ,pw:"0000"} ] ;
+     console.log( users);
+     let result  = toHtml( users);     
+     $("#show").html(result);        
+ } 
+ function toHtml( users){
+	 console.log(users);
+	 let htmlcontents="<ul>";
+	 users.forEach( user => { htmlcontents+= "<li data-id=" +  user.id + ">" + user.id  + user.pw +
+		        " <button class='btn'>삭제</button></li>" }) ;
+	 htmlcontents +="</ul>";
+	 alert( htmlcontents);
+	 return htmlcontents;
+ }
+</script>
+</head>
+<body>
+문서가로드가 되면  데이터가 조회되기
+<div  id="show">
+</div>
+</body>
+</html>

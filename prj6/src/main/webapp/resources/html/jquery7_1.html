@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <style>
+      #a {
+        width: 10%;
+        height: 100px;
+        background-color: #bbdefb;
+      }
+ </style>
+<script>
+
+$(document).ready(
+     function(){
+    	  //alert("load");
+    	  $("#btn").click(
+    			  function(){
+    				 // alert("dfd");
+    				 $("#a").animate(
+    						 {
+    							 width:"100%"    							
+    						 },
+    						 2000,
+    						 'swing',
+    						 function(){
+    							$(this).animate( {
+    								width:"0%"
+    							} , 2000) 
+    						 }
+    				 );
+    				 
+    			  }
+    		);
+     }		
+);
+</script>
+</head>
+<body>
+
+
+<!--  $(선택자).animate(스타일 [,지속시간] [,시간당속도함수] [,콜백 함수]); --> 
+  
+    <p><button id="btn">Click!</button></p>
+    <div id="a"></div>
+
+</body>
+</html>

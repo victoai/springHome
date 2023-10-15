@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<style>
+ .style1{
+   color:red;
+   width:300px;
+   height:50px;
+   border:2px solid red;
+   margin:0px auto;
+   text-align:center;
+   line-height:50px; 
+ }  
+</style>
+<script>
+$(document).ready(
+     function(){
+    	 alert("dkdkdk");    	 
+    	 $("#btn1").click( function(){
+    		   $("#wrap").addClass("style1");
+    	 });
+    	 
+    	 $("#btn2").click(function(){
+    		   $("#wrap").removeClass("style1");
+    	 });
+    	 
+     }	
+);
+</script>
+</head>
+<body>
+<button  id="btn1"> 스타일 추가</button>
+<button  id="btn2"> 스타일 제거 </button>
+<div id="wrap">
+  보이기
+</div>
+</body>
+</html>

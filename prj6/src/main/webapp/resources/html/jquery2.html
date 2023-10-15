@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+ 
+  
+   function check(){	  // submit 할지 말지  true, false 
+	   
+	   //정상적이면 true => submit될 수 있도록 
+	   //비정상적이면  false => submit 되지않도록 함 
+	   let id = $("#id").val();
+	   let pw = $("#pw").val();	   
+	   //alert( id);
+	   //alert( pw);	   
+	   if( id ==""){
+		   alert("확인하세요");
+		   $("#id").focus();
+		   return false;
+	   }else if(pw==""){
+		   alert("pw확인하세요");
+		   $("#pw").focus();
+		   return false;
+	   }	   
+	   else{
+		   return true;   
+	   }	  	 
+   }
+   
+</script>
+</head>
+<body>
+ 
+ <h2>이벤트리스너 = false  (현재이벤트의 동작을 중지함 )</h2>
+<form action="" onsubmit="return check()">
+<input type="text"  name="id"  id="id" >
+<input type="text"  name="pw"  id="pw" >
+<button >로그인</button></form>
+</body>
+</html>

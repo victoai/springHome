@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+   // let idTag  = document.getElementById("id");
+  //  idTag.value  ="dkdkdkdk";
+  //  let id  = idTag.value;
+  
+   function check(){
+	    alert("클릭되었어");
+	    //value값 얻어오기
+	    let id  = $("#id").val();
+	    let pw =  $("#pw").val();	    
+	    alert( id);
+	    alert( pw);	
+	    
+	    //value변경하기 
+	    $("#pw").val("0000");
+	    
+	    
+   }
+   
+</script>
+</head>
+<body>
+
+
+<form>
+<input type="text"  name="id"  id="id" >
+<input type="text"  name="pw"  id="pw" >
+<button  type="button" onclick="check()">로그인</button></form>
+</body>
+</html>

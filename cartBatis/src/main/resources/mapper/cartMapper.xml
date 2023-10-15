@@ -27,7 +27,7 @@
 
     <!--  장바구니리스트를 넘기면 해당하는 상품에 대한 상품정보를  List로 반환 함  -->
 	<select id="selectGoods" resultType="GoodsDTO"
-		parameterType="java.util.List">
+		parameterType="java.util.List">    
       <![CDATA[
           select *
           from  goods_tbl

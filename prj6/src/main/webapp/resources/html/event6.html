@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+/*
+ function search(e){	 
+	   alert( "검색합니다");
+	   console.log( e) ;
+	// if( e.keyCode==13){
+	   if( e.key=="Enter"){
+		   alert("검색중.... ");
+	   }
+ }
+	
+	*/
+    
+ function search( ){
+	 console.log(event);
+	 alert( "검색합니다");	 
+	// if( event.keyCode==13){
+	   if( event.key=="Enter")
+		   alert("검색중.... ");
+	   }
+ }  
+ 
+ function a( ){
+	 alert("a");
+ }
+
+</script>
+</head>
+<body>
+
+<!--  검색 <input type="text"   onkeyup="search(event)" > -->
+검색 <input type="text"   onkeyup="search(event)" >
+</body>
+</html>

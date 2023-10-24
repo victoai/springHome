@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+
+//Kakao API 설정
+const KAKAO_REST_API_KEY = 'c2c80cc59eb12ce43927bf1f9cfe0196';
+
+// 메시지 전송 함수
+function sendKakaoMessage(recipientId, message) {
+  // Kakao API 엔드포인트 URL
+  const apiUrl = 'https://kapi.kakao.com/v2/api/talk/memo/default/send';
+
+  // 요청 헤더 설정
+  const headers = {
+    'Authorization': `Bearer ${KAKAO_REST_API_KEY}`,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  };
+
+  // 메시지 데이터
+  const data = new URLSearchParams();
+  data.append('template_object', JSON.stringify({
+    object_type: 'text',
+    text: message,
+    link: {
+      web_url: 'https://example.com', // 메시지와 연결할 웹 페이지 URL
+    },
+  }));
+  data.append('receiver_uuids', JSON.stringify([recipientId]));
+
+  // Kakao 메시지 전송 요청
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: headers,
+    body: data,
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Kakao 메시지 전송 결과:', data);
+  })
+  .catch(error => {
+    console.error('Kakao 메시지 전송 중 오류 발생:', error);
+  });
+}
+
+// 사용 예제
+const recipientId = 'RECIPIENT_UUID'; // 수신자의 KakaoTalk UUID
+const message = '안녕하세요, Kakao 메시지 테스트입니다!';
+
+sendKakaoMessage(recipientId, message);
+</script>
+
+</body>
+</html>

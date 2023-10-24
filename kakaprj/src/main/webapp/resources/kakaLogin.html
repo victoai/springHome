@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카카오 로그인 예제</title>
+</head>
+<body>
+	<h1>카카오 로그인 예제</h1>
+	<button id="kakao-login">카카오로 로그인</button>
+
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+	
+    Kakao.init('c2c80cc59eb12ce43927bf1f9cfe0196'); // 여기에 발급받은 API Key를 입력하세요.
+    document.getElementById('kakao-login').addEventListener('click', function() {    	
+      Kakao.Auth.login({
+        success: function(authObj) {
+        	 Kakao.API.request({
+                 url: '/v2/user/me',               
+                 success: function (response) {               	  
+               	   console.log( response);
+               	//   alert( response.kakao_account  );         	 
+                   alert('로그인 성공');
+                 }, 
+                 fail: function (error) {
+                     console.log(error)
+                 }           
+       		});
+        },
+        fail: function(err) {
+          alert('로그인 실패: ' + JSON.stringify(err));
+        },
+      });   // Kakao.Auth.login      
+    });     // addEventListener 
+  </script>
+</body>
+</html>

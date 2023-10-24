@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>장소 위치 지도</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            // 좌표 생성
+            var location = { lat: 37.7749, lng: -122.4194 }; // 위도와 경도를 적절하게 설정하세요.
+
+            // 맵을 생성하고 좌표를 설정
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15, // 줌 레벨 조절
+                center: location
+            });
+
+            // 마커 생성
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: '내 위치'
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsLpi_vMOsUZeIv2OpKyosmuE1i-k0OrY&callback=initMap"></script>
+</body>
+</html>

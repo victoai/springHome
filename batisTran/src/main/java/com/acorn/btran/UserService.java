@@ -15,27 +15,22 @@ public class UserService {
 	   MemberDao dao;
 	 
 	   @Autowired	
-	    private   PlatformTransactionManager transactionManager; 
+	    private   PlatformTransactionManager tm; 
 	
 	 
 	  
-	  public void createUser(Member m) throws Exception {
-		  
-		  System.out.println( "createUser call");
-	  //  TransactionStatus txStatus =
-	   // transactionManager.getTransaction(new DefaultTransactionDefinition(new DefaultTransactionDefinition() ));
-		  DefaultTransactionDefinition def = new DefaultTransactionDefinition();
-		  def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
-		  TransactionStatus status = transactionManager.getTransaction(def);
+	  public void createUser( ) throws Exception {
+		 
+		  TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
 
 	    try {    	
 	    
-	      dao.insert(m);	
-	      dao.insert(m);	
+	      dao.insert(new Member("test289","000","김길동"));	
+	      dao.insert(new Member("test289","000","나길동"));	
 	      
-	      transactionManager.commit(status);
+	      tm.commit(status);
 	    } catch (Exception e) {
-	      transactionManager.rollback(status);
+	      tm.rollback(status);
 	      System.out.println( "rollback 한다");
 	      throw e;
 	    }

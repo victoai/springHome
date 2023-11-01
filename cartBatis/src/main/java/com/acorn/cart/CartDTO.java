@@ -6,6 +6,7 @@ public class CartDTO {
 	String memberId;
 	String goodsNo;
 	int cartQty;
+	String options;
 	
 	public String getCartNO() {
 		return cartNO;
@@ -42,11 +43,18 @@ public class CartDTO {
 	public CartDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	public String getOptions() {
+		return options;
+	}
+	public void setOptions(String options) {
+		this.options = options;
+	}
 	@Override
 	public String toString() {
 		return "CartDTO [cartNO=" + cartNO + ", memberId=" + memberId + ", goodsNo=" + goodsNo + ", cartQty=" + cartQty
-				+ "]";
+				+ ", options=" + options + "]";
 	}
+ 
 	
 	
 

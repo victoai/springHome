@@ -23,11 +23,19 @@ public class OrderController {
 	 
 	
 	@PostMapping("/order")
-	public String order( @RequestParam String[] h_orderItem , HttpServletRequest request) {   //@RequestParam 해야함 
+	public String order( @RequestParam String[] h_orderItem , String[] option  , HttpServletRequest request) {   //@RequestParam 해야함 
 		
 	//	System.out.println( Arrays.toString(h_orderItem));
 		HttpSession session = request.getSession();
 		
+		
+		for(  String options: option) {
+			  System.out.println(options);
+			 
+		}
+		
+		 
+		 
 		
 		//
 		Map<String , List>  cartMap  =  (Map<String, List>)session.getAttribute("cartMap");  // 세션으로부터 cartMap 정보 얻어오기
@@ -37,8 +45,9 @@ public class OrderController {
 		//주문정보를 담을 리스트 준비함
 		List<OrderDTO> orderList = new ArrayList<OrderDTO>();			
 		 
-		for( int i=0; i< h_orderItem.length ; i++) {
+		for( int i=0; i< h_orderItem.length ; i++) {   // 옵션정보 
 			String[] orderItem = h_orderItem[i].split(":");	
+			
 			String orderGoodsNo = orderItem[0];   //상품코드 
 			int  orderQty =  Integer.parseInt( orderItem[1]); // 주문수량
 			GoodsDTO goodsDTO = goodsList.get(i);
@@ -50,8 +59,10 @@ public class OrderController {
 				orderDTO.setQty( orderQty);				
 				orderDTO.setAmount(  goodsDTO.getPrice() *  orderQty);
 				orderDTO.setGoodsName(goodsDTO.getName());
+				orderDTO.setOption(option[i]);
 				orderList.add(orderDTO); 			 
 			}			
+			
 			
 		}
 		

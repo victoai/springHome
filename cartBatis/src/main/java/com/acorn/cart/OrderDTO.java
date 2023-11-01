@@ -8,6 +8,7 @@ public class OrderDTO {
 	int qty;
 	int amount;
 	String  goodsName;
+	String option;
 	
 	public String getGoodsName() {
 		return goodsName;
@@ -21,6 +22,12 @@ public class OrderDTO {
 	String name;
 	
 	
+	public String getOption() {
+		return option;
+	}
+	public void setOption(String option) {
+		this.option = option;
+	}
 	public String getAddr1() {
 		return addr1;
 	}
@@ -79,10 +86,10 @@ public class OrderDTO {
 	@Override
 	public String toString() {
 		return "OrderDTO [orderNo=" + orderNo + ", memberId=" + memberId + ", goodsNo=" + goodsNo + ", qty=" + qty
-				+ ", amount=" + amount + ", addr1=" + addr1 + ", addr2=" + addr2 + ", tel=" + tel + ", name=" + name
-				+ "]";
+				+ ", amount=" + amount + ", goodsName=" + goodsName + ", option=" + option + ", addr1=" + addr1
+				+ ", addr2=" + addr2 + ", tel=" + tel + ", name=" + name + "]";
 	}
- 
+	 
 	 
 	
 	

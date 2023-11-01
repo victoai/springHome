@@ -11,6 +11,7 @@
 		<result property="memberId" column="memberId" />
 		<result property="goodsNo" column="goodsNo" />
 		<result property="cartQty" column="cartQty" />
+		 <result property="options" column="options" />
 	</resultMap>
 
 

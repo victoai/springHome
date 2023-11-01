@@ -11,7 +11,7 @@
 	    </selectKey>
 	    
 	    <![CDATA[
-			insert into ordertbl(orderNo,  memberId,  goodsNo, goodsName,  qty,  amount  ,addr1, addr2, tel, name )
+			insert into ordertbl(orderNo,  memberId,  goodsNo, goodsName,  qty,  amount  ,addr1, addr2, tel, name , options )
 							     values(#{orderNo},		
 							            #{memberId},					           
 									    #{goodsNo},
@@ -21,7 +21,8 @@
 									    #{addr1},
 									    #{addr2},
 									    #{tel}, 
-									    #{name})
+									    #{name} ,
+									    #{option})
     	]]>
 	</insert>
 </mapper>
